@@ -1,0 +1,48 @@
+--- ldapexplorertool-2.0.1/src/newentrydlg.cc	2006/11/17 22:08:26	60
++++ ldapexplorertool-2.0.1/src/newentrydlg.cc	2007/09/14 19:49:42	89
+@@ -31,7 +31,9 @@
+ EVT_MENU(XRCID( "value_del" ), NewEntryDlg::OnDelValue )
+ EVT_MENU(XRCID( "delete_attribute" ), NewEntryDlg::OnDeleteAttribute )
+ EVT_BUTTON( XRCID( "button_save" ), NewEntryDlg::OnSave )
++#if wxMAJOR_VERSION==2 && wxMINOR_VERSION<8
+ EVT_BUTTON( XRCID( "button_cancel" ), NewEntryDlg::OnCancel )
++#endif
+ EVT_BUTTON( XRCID( "button_add" ), NewEntryDlg::OnManualAdd )
+ 
+ END_EVENT_TABLE()
+@@ -40,7 +42,10 @@
+ 
+ NewEntryDlg::NewEntryDlg( wxWindow* p_Parent, const wxString& p_ParentDn, SchemaUtil& p_Ldap ) 
+ {
+-	
++#if wxMAJOR_VERSION == 2 && wxMINOR_VERSION >= 8
++	//SetAffirmativeId( XRCID("") );
++	SetEscapeId( XRCID("button_cancel") );
++#endif
+ 	int	Err ;
+ 	wxXmlResource::Get()->LoadDialog( this, p_Parent, wxT( "entry_create" ) );
+ 	InitControls();
+--- ldapexplorertool-2.0.1/src/attribute_add_dlg.cc	2006/11/17 22:08:26	60
++++ ldapexplorertool-2.0.1/src/attribute_add_dlg.cc	2007/09/14 19:49:42	89
+@@ -22,7 +22,9 @@
+ 
+ BEGIN_EVENT_TABLE( Attribute_Add_Dlg, wxDialog )
+ EVT_BUTTON( XRCID( "button_save" ), Attribute_Add_Dlg::OnSave )
++#if wxMAJOR_VERSION==2 && wxMINOR_VERSION<8
+ EVT_BUTTON( XRCID( "button_cancel" ), Attribute_Add_Dlg::OnCancel )
++#endif
+ 
+ END_EVENT_TABLE()
+ 
+@@ -30,6 +32,11 @@
+ 
+ Attribute_Add_Dlg::Attribute_Add_Dlg( wxWindow* p_Parent, const wxString& p_Dn, const wxString& p_ObjectClass, SchemaUtil& p_Ldap )
+ {
++#if wxMAJOR_VERSION == 2 && wxMINOR_VERSION >= 8
++	//SetAffirmativeId( XRCID("") );
++	SetEscapeId( XRCID("button_cancel") );
++#endif
++
+ 	int	Err ;
+ 	wxXmlResource::Get()->LoadDialog( this, p_Parent, wxT( "attribute_add" ) );
+ 	InitControls();

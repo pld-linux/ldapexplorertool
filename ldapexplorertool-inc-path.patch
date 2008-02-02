@@ -1,0 +1,12 @@
+diff -uNr ldapexplorertool-2.0.1.orig/GNUmakefile.config ldapexplorertool-2.0.1/GNUmakefile.config
+--- ldapexplorertool-2.0.1.orig/GNUmakefile.config	2006-11-28 20:17:26.000000000 +0000
++++ ldapexplorertool-2.0.1/GNUmakefile.config	2008-01-31 20:46:49.000000000 +0000
+@@ -37,7 +37,7 @@
+ 
+ 
+ # Specific to my install of OpenLDAP / MinGw
+-LDAP_INC=-I/usr/local/include
++LDAP_INC=-I/usr/include
+ #LDAP_INC=-I/usr/include
+ 
+ ################################################
