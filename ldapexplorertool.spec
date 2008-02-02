@@ -11,13 +11,6 @@ Patch0:		%{name}-inc-path.patch
 Patch1:		%{name}-wx28.patch
 URL:		http://ldaptool.sourceforge.net/
 BuildRequires:	wxWidgets-devel
-#BuildRequires:	autoconf
-#BuildRequires:	automake
-#BuildRequires:	intltool
-#BuildRequires:	libtool
-#Requires(postun):	-
-#Requires(pre,post):	-
-#Requires(preun):	-
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
