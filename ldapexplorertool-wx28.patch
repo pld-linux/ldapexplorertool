@@ -46,3 +46,23 @@
  	int	Err ;
  	wxXmlResource::Get()->LoadDialog( this, p_Parent, wxT( "attribute_add" ) );
  	InitControls();
+--- ldapexplorertool-2.0.1/GNUmakefile.config~	2009-07-12 15:21:54.149132503 +0200
++++ ldapexplorertool-2.0.1/GNUmakefile.config	2009-07-12 15:36:05.447132739 +0200
+@@ -15,7 +15,7 @@
+ #    provided by wxWidgets
+ ################################################
+ 
+-WX_INC=$(shell wx-config --cflags)
++WX_INC=$(shell wx-gtk2-unicode-config --cflags)
+ 
+ 
+ ################################################
+@@ -25,7 +25,7 @@
+ ################################################
+ 
+ # Debian Etch / Windows
+-WX_LIB=$(shell wx-config --libs) 
++WX_LIB=$(shell wx-gtk2-unicode-config --libs) 
+ # Debian Sage (3.1) - wxGTK 2.4
+ #WX_LIB=$(shell wx-config --libs) -lwx_gtk_xrc-2.4
+ 
