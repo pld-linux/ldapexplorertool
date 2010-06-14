@@ -2,7 +2,7 @@ Summary:	A free multi-platform LDAP client
 Summary(pl.UTF-8):	Wolny wieloplatformowy klient LDAP
 Name:		ldapexplorertool
 Version:	2.0.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/ldaptool/%{name}-%{version}.tar.gz
@@ -11,6 +11,7 @@ Patch0:		%{name}-inc-path.patch
 Patch1:		%{name}-wx28.patch
 URL:		http://ldaptool.sourceforge.net/
 BuildRequires:	openldap-devel
+BuildRequires:	wxGTK2-unicode-devel
 BuildRequires:	wxWidgets-devel
 Obsoletes:	LDAPExplorerTool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
